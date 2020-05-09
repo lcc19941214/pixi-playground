@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
+import routesMeta from './routes.json';
 
 Vue.use(VueRouter);
 
@@ -10,11 +11,11 @@ const routes = [
     name: 'Home',
     component: Home,
   },
-  {
-    path: '/about',
-    name: 'About',
-    component: () => import('../views/About.vue'),
-  },
+  ...routesMeta.map((v) => ({
+    path: v.path,
+    name: v.name,
+    component: () => import(`../views/pixi/${v.basename}`),
+  })),
 ];
 
 const router = new VueRouter({

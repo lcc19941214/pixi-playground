@@ -1,18 +1,36 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <h1>PIXI@{{version}} - Playground</h1>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import * as PIXI from 'pixi.js';
 
 export default {
-  name: "Home",
-  components: {
-    HelloWorld
+  name: 'Home',
+  data() {
+    return {
+      version: PIXI.VERSION
+    };
+  },
+  mounted() {
+    let type = 'WebGL';
+    if (!PIXI.utils.isWebGLSupported()) {
+      type = 'canvas';
+    }
+
+    PIXI.utils.sayHello(type);
   }
 };
 </script>
+
+<style lang="less" scoped>
+.home {
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+}
+</style>
