@@ -53,6 +53,9 @@ export default {
       color: #42b983;
     }
   }
+  a:not(.router-link-exact-active) {
+    text-decoration: none;
+  }
 }
 
 #content {

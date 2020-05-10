@@ -2,7 +2,11 @@
   {
     "path": "/1.Hello",
     "name": "1.Hello",
-    "basename": "1.Hello.vue",
-    "filename": "../views/pixi/1.Hello.vue"
+    "basename": "1.Hello.vue"
+  },
+  {
+    "path": "/2.Sprite",
+    "name": "2.Sprite",
+    "basename": "2.Sprite.vue"
   }
 ]

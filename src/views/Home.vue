@@ -29,8 +29,4 @@ export default {
 .home {
   text-align: center;
 }
-
-h1 {
-  margin: 0;
-}
 </style>

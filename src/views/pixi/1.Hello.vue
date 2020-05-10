@@ -62,9 +62,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-h2 {
-  margin-top: 0;
-}
 #hello {
   width: 100%;
 }
