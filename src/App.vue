@@ -24,22 +24,7 @@ export default {
 };
 </script>
 
-<style lang="less">
-html,
-body {
-  padding: 0;
-  margin: 0;
-}
-
-html {
-  height: 100%;
-}
-
-body {
-  height: 100%;
-  overflow: hidden;
-}
-
+<style scoped lang="less">
 #app {
   display: flex;
   height: 100%;
@@ -50,6 +35,7 @@ body {
 }
 
 #nav {
+  flex-shrink: 0;
   overflow-y: auto;
   width: 200px;
   border-right: 1px solid #ddd;
@@ -70,6 +56,7 @@ body {
 }
 
 #content {
+  flex: 1;
   padding: 24px;
   overflow-y: auto;
 }
