@@ -6,9 +6,11 @@
       <div>
         <div>
           <label for>Background Color:&nbsp;</label>
-          <input type="text" placeholder="#000000" value="bgColor" v-model="bgColor" />
+          <input type="text" value="bgColor" v-model="bgColor" />
           &nbsp;&nbsp;
-          <button @click="updateRendererBgColor">update</button>
+          <button @click="updateRendererBgColor">Update</button>
+          &nbsp;&nbsp;
+          <button @click="randomRendererBgColor">Random</button>
         </div>
       </div>
     </div>
@@ -27,19 +29,30 @@
 <script>
 import * as PIXI from 'pixi.js';
 
+const getRandomHex = () => Math.floor(Math.random() * 0xffffff).toString(16);
+
 export default {
   name: 'Hello',
   data: () => {
-    const app = new PIXI.Application({ width: 300, height: 300 });
-    const appResizable = new PIXI.Application({ backgroundColor: 0xffdd22 });
+    const appBg = getRandomHex();
+    const app = new PIXI.Application({
+      width: 300,
+      height: 300,
+      backgroundColor: `0x${appBg}`
+    });
+    const appResizable = new PIXI.Application({ backgroundColor: `0x${getRandomHex()}` });
     return {
       app,
       appResizable,
-      bgColor: app.renderer._backgroundColorString
+      bgColor: `#${appBg}`
     };
   },
   methods: {
     updateRendererBgColor() {
+      this.app.renderer.backgroundColor = this.bgColor.replace(/^#/, '0x');
+    },
+    randomRendererBgColor() {
+      this.bgColor = `#${Math.floor(Math.random() * 0xffffff).toString(16)}`;
       this.app.renderer.backgroundColor = this.bgColor.replace(/^#/, '0x');
     }
   },
