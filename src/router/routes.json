@@ -8,5 +8,10 @@
     "path": "/2.Sprite",
     "name": "2.Sprite",
     "basename": "2.Sprite.vue"
+  },
+  {
+    "path": "/3.Display&Moving",
+    "name": "3.Display&Moving",
+    "basename": "3.Display&Moving.vue"
   }
 ]
