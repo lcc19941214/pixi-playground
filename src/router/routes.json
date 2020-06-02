@@ -13,5 +13,10 @@
     "path": "/3.Display&Moving",
     "name": "3.Display&Moving",
     "basename": "3.Display&Moving.vue"
+  },
+  {
+    "path": "/4.Draw",
+    "name": "4.Draw",
+    "basename": "4.Draw.vue"
   }
 ]
