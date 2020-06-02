@@ -18,5 +18,10 @@
     "path": "/4.Draw",
     "name": "4.Draw",
     "basename": "4.Draw.vue"
+  },
+  {
+    "path": "/5.Font",
+    "name": "5.Font",
+    "basename": "5.Font.vue"
   }
 ]
