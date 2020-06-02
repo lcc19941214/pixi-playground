@@ -73,10 +73,11 @@ export default {
       .add('bricks', '/img/mario/bricks.png')
       .add('coin', '/img/mario/coin.gif')
       .add('mario', '/img/mario/mario.png')
-      .load(this.addSprite);
-
-    const root = document.getElementById('app');
-    root.querySelector('#stage').appendChild(this.app.view);
+      .load(() => {
+        this.addSprite();
+        const root = document.getElementById('app');
+        root.querySelector('#stage').appendChild(this.app.view);
+      });
   }
 };
 </script>
