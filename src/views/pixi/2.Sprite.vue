@@ -45,11 +45,12 @@ export default {
       const { width: w, height: h } = carton;
       const range = [width - w / 2, height - h / 2];
       const [x, y] = [random(w / 2, range[0]), random(h / 2, range[1])];
+      carton.scale.set(3);
       carton.anchor.set(0.5);
       carton.x = x;
       carton.y = y;
       carton.angle = random(0, 360);
-      carton.tint = Math.random() * 0xffffff;
+      carton.alpha = random(2, 10) / 10;
 
       this.appCartoon.stage.addChild(carton);
     },
@@ -63,7 +64,7 @@ export default {
     }
   },
   mounted() {
-    this.loader.add('carton', '/img/2_sprite_1_1.png').load((loader, resources) => {
+    this.loader.add('carton', '/img/mario/mario.png').load((loader, resources) => {
       console.log('[loaded]:' + resources.carton.url);
       this.addSprite();
     });
